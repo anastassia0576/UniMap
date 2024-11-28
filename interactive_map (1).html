@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b007c45a76e677679ffd206f5e5ceb25 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b007c45a76e677679ffd206f5e5ceb25" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b007c45a76e677679ffd206f5e5ceb25 = L.map(
+                "map_b007c45a76e677679ffd206f5e5ceb25",
+                {
+                    center: [51.186845, 71.41058],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_599f539fde6606d8a5fcaec891aac120 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_599f539fde6606d8a5fcaec891aac120.addTo(map_b007c45a76e677679ffd206f5e5ceb25);
+        
+    
+            var marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_ff0de49490eefe73b6f74a354610b9f4 = L.marker(
+                [51.186010264645375, 71.41037773710028],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_6882a2ecf3d91f39f8606211cf0010c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ff0de49490eefe73b6f74a354610b9f4.setIcon(icon_6882a2ecf3d91f39f8606211cf0010c8);
+        
+    
+        var popup_37b8a06b3a3ee0b06452087b9432def4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3e409c31d75a7f640e92bbff49564d3 = $(`<div id="html_c3e409c31d75a7f640e92bbff49564d3" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Корпус агрономического факультета КазАТУ<br><b>Category:</b> Category B</div>`)[0];
+                popup_37b8a06b3a3ee0b06452087b9432def4.setContent(html_c3e409c31d75a7f640e92bbff49564d3);
+            
+        
+
+        marker_ff0de49490eefe73b6f74a354610b9f4.bindPopup(popup_37b8a06b3a3ee0b06452087b9432def4)
+        ;
+
+        
+    
+    
+            marker_ff0de49490eefe73b6f74a354610b9f4.bindTooltip(
+                `<div>
+                     Корпус агрономического факультета КазАТУ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_306bed1b6b24c8eb5d60a822d0e9c1fd = L.marker(
+                [51.18714511950674, 71.40919952047997],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_07e001c79b30f4ff9f739107f2a73cec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_306bed1b6b24c8eb5d60a822d0e9c1fd.setIcon(icon_07e001c79b30f4ff9f739107f2a73cec);
+        
+    
+        var popup_887182b5210a1fcb15ed391215de5255 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eae7152d115a49ce1e09367fb65a1c61 = $(`<div id="html_eae7152d115a49ce1e09367fb65a1c61" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Казахский агротехнический университет имени С. Сейфуллина, главный корпус<br><b>Category:</b> Category B</div>`)[0];
+                popup_887182b5210a1fcb15ed391215de5255.setContent(html_eae7152d115a49ce1e09367fb65a1c61);
+            
+        
+
+        marker_306bed1b6b24c8eb5d60a822d0e9c1fd.bindPopup(popup_887182b5210a1fcb15ed391215de5255)
+        ;
+
+        
+    
+    
+            marker_306bed1b6b24c8eb5d60a822d0e9c1fd.bindTooltip(
+                `<div>
+                     Казахский агротехнический университет имени С. Сейфуллина, главный корпус
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc6380376dd64583d392842a48ecf611 = L.marker(
+                [51.18797538164955, 71.4094857538959],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_aa9fc14ccdfbfbbf3a75f14399185f59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fc6380376dd64583d392842a48ecf611.setIcon(icon_aa9fc14ccdfbfbbf3a75f14399185f59);
+        
+    
+        var popup_4425187168184575b0949c306d9d4115 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b13e69496d396ae8789cad77307c37c4 = $(`<div id="html_b13e69496d396ae8789cad77307c37c4" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Биологический корпус КазАТУ<br><b>Category:</b> Category B</div>`)[0];
+                popup_4425187168184575b0949c306d9d4115.setContent(html_b13e69496d396ae8789cad77307c37c4);
+            
+        
+
+        marker_fc6380376dd64583d392842a48ecf611.bindPopup(popup_4425187168184575b0949c306d9d4115)
+        ;
+
+        
+    
+    
+            marker_fc6380376dd64583d392842a48ecf611.bindTooltip(
+                `<div>
+                     Биологический корпус КазАТУ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21f601aaca340a7bc75459c11703843c = L.marker(
+                [51.1877459137084, 71.41114324507092],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_3fb8f5750b2b1dea94f6113a3db4bed5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_21f601aaca340a7bc75459c11703843c.setIcon(icon_3fb8f5750b2b1dea94f6113a3db4bed5);
+        
+    
+        var popup_3adbe3af73a0eb458d6a409cb3b34507 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_395bc31f1dc411347cd5ef9819f825a1 = $(`<div id="html_395bc31f1dc411347cd5ef9819f825a1" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Корпус технического факультета КазАТУ<br><b>Category:</b> Category B</div>`)[0];
+                popup_3adbe3af73a0eb458d6a409cb3b34507.setContent(html_395bc31f1dc411347cd5ef9819f825a1);
+            
+        
+
+        marker_21f601aaca340a7bc75459c11703843c.bindPopup(popup_3adbe3af73a0eb458d6a409cb3b34507)
+        ;
+
+        
+    
+    
+            marker_21f601aaca340a7bc75459c11703843c.bindTooltip(
+                `<div>
+                     Корпус технического факультета КазАТУ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f7b258398cbfb6df5ddb02df874cc1e9 = L.marker(
+                [51.18715346392423, 71.41172902508583],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_12abdb587b060336fccc1c8353cef78c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f7b258398cbfb6df5ddb02df874cc1e9.setIcon(icon_12abdb587b060336fccc1c8353cef78c);
+        
+    
+        var popup_16a743aeca869761885f4783beac10c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32d7c821e33d996e24cc42fdbb7971cf = $(`<div id="html_32d7c821e33d996e24cc42fdbb7971cf" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Новый корпус технического факультета КазАТУ<br><b>Category:</b> Category B</div>`)[0];
+                popup_16a743aeca869761885f4783beac10c3.setContent(html_32d7c821e33d996e24cc42fdbb7971cf);
+            
+        
+
+        marker_f7b258398cbfb6df5ddb02df874cc1e9.bindPopup(popup_16a743aeca869761885f4783beac10c3)
+        ;
+
+        
+    
+    
+            marker_f7b258398cbfb6df5ddb02df874cc1e9.bindTooltip(
+                `<div>
+                     Новый корпус технического факультета КазАТУ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bbdf1b1ac3325130f88c20d726c55b2f = L.marker(
+                [51.18707001968042, 71.41081041551712],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_99a06b4f2d789d20d28124b31f93c5ba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bbdf1b1ac3325130f88c20d726c55b2f.setIcon(icon_99a06b4f2d789d20d28124b31f93c5ba);
+        
+    
+        var popup_7278382dbac3ee9f2102ef8a18a05869 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb3aa71603c1b5314dac3893a0dbadcf = $(`<div id="html_fb3aa71603c1b5314dac3893a0dbadcf" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Корпус военной кафедры КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_7278382dbac3ee9f2102ef8a18a05869.setContent(html_fb3aa71603c1b5314dac3893a0dbadcf);
+            
+        
+
+        marker_bbdf1b1ac3325130f88c20d726c55b2f.bindPopup(popup_7278382dbac3ee9f2102ef8a18a05869)
+        ;
+
+        
+    
+    
+            marker_bbdf1b1ac3325130f88c20d726c55b2f.bindTooltip(
+                `<div>
+                     Корпус военной кафедры КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c016ecac5179215e2ee135bfa73ed0c0 = L.marker(
+                [51.18659438460773, 71.41170239872159],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_477d0cd658fc3e3e2856a2eccf1b942a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c016ecac5179215e2ee135bfa73ed0c0.setIcon(icon_477d0cd658fc3e3e2856a2eccf1b942a);
+        
+    
+        var popup_556969eac80e46bf23a7c953bd84f8b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3e8baa6373037c4e8ba2d55be75866e = $(`<div id="html_e3e8baa6373037c4e8ba2d55be75866e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Склад КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_556969eac80e46bf23a7c953bd84f8b1.setContent(html_e3e8baa6373037c4e8ba2d55be75866e);
+            
+        
+
+        marker_c016ecac5179215e2ee135bfa73ed0c0.bindPopup(popup_556969eac80e46bf23a7c953bd84f8b1)
+        ;
+
+        
+    
+    
+            marker_c016ecac5179215e2ee135bfa73ed0c0.bindTooltip(
+                `<div>
+                     Склад КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1131e5a21a5c188acc906ac60f66ee74 = L.marker(
+                [51.1863148424068, 71.41260769510728],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_50517853b90731f47e801b083c08d751 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1131e5a21a5c188acc906ac60f66ee74.setIcon(icon_50517853b90731f47e801b083c08d751);
+        
+    
+        var popup_ac1a351fa2c0077bdc0de85c9ca7d3bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a81967a94190777655ba65a13b119091 = $(`<div id="html_a81967a94190777655ba65a13b119091" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Общежитие №7 КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_ac1a351fa2c0077bdc0de85c9ca7d3bb.setContent(html_a81967a94190777655ba65a13b119091);
+            
+        
+
+        marker_1131e5a21a5c188acc906ac60f66ee74.bindPopup(popup_ac1a351fa2c0077bdc0de85c9ca7d3bb)
+        ;
+
+        
+    
+    
+            marker_1131e5a21a5c188acc906ac60f66ee74.bindTooltip(
+                `<div>
+                     Общежитие №7 КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3091c4b633b8c51a57b2e15dd84fe4b3 = L.marker(
+                [51.18694068080447, 71.41294052466108],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_0797e2086a012463fec16bc33e8be645 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3091c4b633b8c51a57b2e15dd84fe4b3.setIcon(icon_0797e2086a012463fec16bc33e8be645);
+        
+    
+        var popup_300756ab7040f35f53c71d58ae6fb536 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_edb1282429d4bdf4b8b5c548bc8715a7 = $(`<div id="html_edb1282429d4bdf4b8b5c548bc8715a7" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Общежитие №2б КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_300756ab7040f35f53c71d58ae6fb536.setContent(html_edb1282429d4bdf4b8b5c548bc8715a7);
+            
+        
+
+        marker_3091c4b633b8c51a57b2e15dd84fe4b3.bindPopup(popup_300756ab7040f35f53c71d58ae6fb536)
+        ;
+
+        
+    
+    
+            marker_3091c4b633b8c51a57b2e15dd84fe4b3.bindTooltip(
+                `<div>
+                     Общежитие №2б КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_14c6a6d336412e54a7d177d273fdad51 = L.marker(
+                [51.18633153154096, 71.4132400712582],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_bf3cae5cf0cf09bec5956c0b865f3274 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_14c6a6d336412e54a7d177d273fdad51.setIcon(icon_bf3cae5cf0cf09bec5956c0b865f3274);
+        
+    
+        var popup_57a5cc4235330cffba0ce2767d27aafb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_86afa29980d76396a0cb31c32ba6911f = $(`<div id="html_86afa29980d76396a0cb31c32ba6911f" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Общежитие №9 КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_57a5cc4235330cffba0ce2767d27aafb.setContent(html_86afa29980d76396a0cb31c32ba6911f);
+            
+        
+
+        marker_14c6a6d336412e54a7d177d273fdad51.bindPopup(popup_57a5cc4235330cffba0ce2767d27aafb)
+        ;
+
+        
+    
+    
+            marker_14c6a6d336412e54a7d177d273fdad51.bindTooltip(
+                `<div>
+                     Общежитие №9 КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_662761527a069eabb7e596de130ff0d2 = L.marker(
+                [51.18643214747047, 71.41429301517488],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_0ee256c239c8480d10c3bb4bae871045 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_662761527a069eabb7e596de130ff0d2.setIcon(icon_0ee256c239c8480d10c3bb4bae871045);
+        
+    
+        var popup_db1b591d4a2eb602ab9c9e5fba3029b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e5f07ada66497417e3abd06803c3f8ff = $(`<div id="html_e5f07ada66497417e3abd06803c3f8ff" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Общежитие №4 КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_db1b591d4a2eb602ab9c9e5fba3029b6.setContent(html_e5f07ada66497417e3abd06803c3f8ff);
+            
+        
+
+        marker_662761527a069eabb7e596de130ff0d2.bindPopup(popup_db1b591d4a2eb602ab9c9e5fba3029b6)
+        ;
+
+        
+    
+    
+            marker_662761527a069eabb7e596de130ff0d2.bindTooltip(
+                `<div>
+                     Общежитие №4 КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2af89dfb9d086e7d56da2519328eb5c4 = L.marker(
+                [51.18658181999851, 71.41529891243619],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_24952063a5d15d2e7fd3597dbbd90f63 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2af89dfb9d086e7d56da2519328eb5c4.setIcon(icon_24952063a5d15d2e7fd3597dbbd90f63);
+        
+    
+        var popup_5f212e3a56cde4eec0cb1e42138d6607 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f40acc91adb82f1e5ea73e26bc1dfcd8 = $(`<div id="html_f40acc91adb82f1e5ea73e26bc1dfcd8" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Корпус земельного факультета КазАту <br><b>Category:</b> Category B</div>`)[0];
+                popup_5f212e3a56cde4eec0cb1e42138d6607.setContent(html_f40acc91adb82f1e5ea73e26bc1dfcd8);
+            
+        
+
+        marker_2af89dfb9d086e7d56da2519328eb5c4.bindPopup(popup_5f212e3a56cde4eec0cb1e42138d6607)
+        ;
+
+        
+    
+    
+            marker_2af89dfb9d086e7d56da2519328eb5c4.bindTooltip(
+                `<div>
+                     Корпус земельного факультета КазАту 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b02ee45517126671cd39e2195892e893 = L.marker(
+                [51.18641280852361, 71.41385674718038],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_aebec8047026fb5a67fba689de2b8436 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b02ee45517126671cd39e2195892e893.setIcon(icon_aebec8047026fb5a67fba689de2b8436);
+        
+    
+        var popup_fe6afbbfa06cf5d52eeec37eebe7b86c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_239eadee8882ce9a2014f4f5f7945b08 = $(`<div id="html_239eadee8882ce9a2014f4f5f7945b08" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Общежитие №5 КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_fe6afbbfa06cf5d52eeec37eebe7b86c.setContent(html_239eadee8882ce9a2014f4f5f7945b08);
+            
+        
+
+        marker_b02ee45517126671cd39e2195892e893.bindPopup(popup_fe6afbbfa06cf5d52eeec37eebe7b86c)
+        ;
+
+        
+    
+    
+            marker_b02ee45517126671cd39e2195892e893.bindTooltip(
+                `<div>
+                     Общежитие №5 КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3316ee754327fd4c7dca47a82e989bf4 = L.marker(
+                [51.186700066345196, 71.41107883675795],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_9dc6351002028be9660387536b1fbd72 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3316ee754327fd4c7dca47a82e989bf4.setIcon(icon_9dc6351002028be9660387536b1fbd72);
+        
+    
+        var popup_1ae15bc283ddf6977b0e8434455f8bbc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ff90181707d84cad122894bf4c5f0909 = $(`<div id="html_ff90181707d84cad122894bf4c5f0909" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Гараж КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_1ae15bc283ddf6977b0e8434455f8bbc.setContent(html_ff90181707d84cad122894bf4c5f0909);
+            
+        
+
+        marker_3316ee754327fd4c7dca47a82e989bf4.bindPopup(popup_1ae15bc283ddf6977b0e8434455f8bbc)
+        ;
+
+        
+    
+    
+            marker_3316ee754327fd4c7dca47a82e989bf4.bindTooltip(
+                `<div>
+                     Гараж КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_904a51cd5dd0c698a755b56626fb285d = L.marker(
+                [51.186695146518645, 71.41207484233962],
+                {}
+            ).addTo(marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea);
+        
+    
+            var icon_08c7915fc7221b46c00a1e7567f50e03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_904a51cd5dd0c698a755b56626fb285d.setIcon(icon_08c7915fc7221b46c00a1e7567f50e03);
+        
+    
+        var popup_14e5fd87e480d61ad378105d8e08acf5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_60c77cdf02b6c2d53c50c98f7763d460 = $(`<div id="html_60c77cdf02b6c2d53c50c98f7763d460" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Корпус кафедры технической механики КазАТУ <br><b>Category:</b> Category B</div>`)[0];
+                popup_14e5fd87e480d61ad378105d8e08acf5.setContent(html_60c77cdf02b6c2d53c50c98f7763d460);
+            
+        
+
+        marker_904a51cd5dd0c698a755b56626fb285d.bindPopup(popup_14e5fd87e480d61ad378105d8e08acf5)
+        ;
+
+        
+    
+    
+            marker_904a51cd5dd0c698a755b56626fb285d.bindTooltip(
+                `<div>
+                     Корпус кафедры технической механики КазАТУ 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea.addTo(map_b007c45a76e677679ffd206f5e5ceb25);
+        
+    
+
+        function geo_json_4691a64a6037169aab5328cce15448d7_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4691a64a6037169aab5328cce15448d7 = L.geoJson(null, {
+                onEachFeature: geo_json_4691a64a6037169aab5328cce15448d7_onEachFeature,
+            
+        });
+
+        function geo_json_4691a64a6037169aab5328cce15448d7_add (data) {
+            geo_json_4691a64a6037169aab5328cce15448d7
+                .addData(data);
+        }
+            geo_json_4691a64a6037169aab5328cce15448d7_add({"features": [{"geometry": {"coordinates": [71.41037773710028, 51.186010264645375], "type": "Point"}, "properties": {"category": "Category B", "name": "\u041a\u043e\u0440\u043f\u0443\u0441 \u0430\u0433\u0440\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442\u0430 \u041a\u0430\u0437\u0410\u0422\u0423"}, "type": "Feature"}, {"geometry": {"coordinates": [71.40919952047997, 51.18714511950674], "type": "Point"}, "properties": {"name": "\u041a\u0430\u0437\u0430\u0445\u0441\u043a\u0438\u0439 \u0430\u0433\u0440\u043e\u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442 \u0438\u043c\u0435\u043d\u0438 \u0421. \u0421\u0435\u0439\u0444\u0443\u043b\u043b\u0438\u043d\u0430, \u0433\u043b\u0430\u0432\u043d\u044b\u0439 \u043a\u043e\u0440\u043f\u0443\u0441"}, "type": "Feature"}, {"geometry": {"coordinates": [71.4094857538959, 51.18797538164955], "type": "Point"}, "properties": {"name": "\u0411\u0438\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u043f\u0443\u0441 \u041a\u0430\u0437\u0410\u0422\u0423"}, "type": "Feature"}, {"geometry": {"coordinates": [71.41114324507092, 51.1877459137084], "type": "Point"}, "properties": {"name": "\u041a\u043e\u0440\u043f\u0443\u0441 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442\u0430 \u041a\u0430\u0437\u0410\u0422\u0423"}, "type": "Feature"}, {"geometry": {"coordinates": [71.41172902508583, 51.18715346392423], "type": "Point"}, "properties": {"name": "\u041d\u043e\u0432\u044b\u0439 \u043a\u043e\u0440\u043f\u0443\u0441 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442\u0430 \u041a\u0430\u0437\u0410\u0422\u0423"}, "type": "Feature"}, {"geometry": {"coordinates": [71.41081041551712, 51.18707001968042], "type": "Point"}, "properties": {"name": "\u041a\u043e\u0440\u043f\u0443\u0441 \u0432\u043e\u0435\u043d\u043d\u043e\u0439 \u043a\u0430\u0444\u0435\u0434\u0440\u044b \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41170239872159, 51.18659438460773], "type": "Point"}, "properties": {"name": "\u0421\u043a\u043b\u0430\u0434 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41260769510728, 51.1863148424068], "type": "Point"}, "properties": {"name": "\u041e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435 \u21167 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41294052466108, 51.18694068080447], "type": "Point"}, "properties": {"name": "\u041e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435 \u21162\u0431 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.4132400712582, 51.18633153154096], "type": "Point"}, "properties": {"name": "\u041e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435 \u21169 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41429301517488, 51.18643214747047], "type": "Point"}, "properties": {"name": "\u041e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435 \u21164 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41529891243619, 51.18658181999851], "type": "Point"}, "properties": {"name": "\u041a\u043e\u0440\u043f\u0443\u0441 \u0437\u0435\u043c\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442\u0430 \u041a\u0430\u0437\u0410\u0442\u0443 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41385674718038, 51.18641280852361], "type": "Point"}, "properties": {"name": "\u041e\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435 \u21165 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41107883675795, 51.186700066345196], "type": "Point"}, "properties": {"name": "\u0413\u0430\u0440\u0430\u0436 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}, {"geometry": {"coordinates": [71.41207484233962, 51.186695146518645], "type": "Point"}, "properties": {"name": "\u041a\u043e\u0440\u043f\u0443\u0441 \u043a\u0430\u0444\u0435\u0434\u0440\u044b \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0438 \u041a\u0430\u0437\u0410\u0422\u0423 "}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_4691a64a6037169aab5328cce15448d7.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+    geo_json_4691a64a6037169aab5328cce15448d7.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name"];
+    let aliases = ["Name:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+    geo_json_4691a64a6037169aab5328cce15448d7.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name"];
+    let aliases = ["name"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumpopup"});
+                     
+    
+            geo_json_4691a64a6037169aab5328cce15448d7.addTo(map_b007c45a76e677679ffd206f5e5ceb25);
+        
+    
+            var geo_json_4691a64a6037169aab5328cce15448d7searchControl = new L.Control.Search({
+                layer: geo_json_4691a64a6037169aab5328cce15448d7,
+                
+                collapsed: false,
+                textPlaceholder: 'Search for a point',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_4691a64a6037169aab5328cce15448d7searchControl.on('search:locationfound', function(e) {
+                    geo_json_4691a64a6037169aab5328cce15448d7.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_4691a64a6037169aab5328cce15448d7searchControl.on('search:collapsed', function(e) {
+                        geo_json_4691a64a6037169aab5328cce15448d7.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_b007c45a76e677679ffd206f5e5ceb25.addControl( geo_json_4691a64a6037169aab5328cce15448d7searchControl );
+
+        
+    
+            var layer_control_91e52ae6e83a1ca8deabc4348d7bcb0f_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_599f539fde6606d8a5fcaec891aac120,
+                },
+                overlays :  {
+                    "macro_element_b7ff9d9f749079bf863e382c2e11c9ea" : marker_cluster_b7ff9d9f749079bf863e382c2e11c9ea,
+                    "GeoJSON Data" : geo_json_4691a64a6037169aab5328cce15448d7,
+                },
+            };
+            let layer_control_91e52ae6e83a1ca8deabc4348d7bcb0f = L.control.layers(
+                layer_control_91e52ae6e83a1ca8deabc4348d7bcb0f_layers.base_layers,
+                layer_control_91e52ae6e83a1ca8deabc4348d7bcb0f_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_b007c45a76e677679ffd206f5e5ceb25);
+
+        
+</script>
+</html>
